@@ -2,28 +2,32 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
-  let [counter, setcounter] = useState(0);
+  //clicking on the button will add value
+  let [counter, setCounter] = useState(5);
 
-  const addValue = () => {
-    setcounter(counter + 1);
-    if (counter === 20) {
-      setcounter(20);
+  // adding value to counter
+  function addvalue() {
+    setCounter(counter + 1);
+    if (counter == 20) {
+      alert("you have reached the limit");
+      setCounter(20);
     }
-  };
-  const removevalue = () => {
-    setcounter(counter - 1);
-    if (counter === 0) {
-      setcounter(0);
+  }
+  function removevalue() {
+    setCounter(counter - 1);
+    if (counter == 0) {
+      alert("you have reached the limit");
+      setCounter(0);
     }
-  };
+  }
+
   return (
     <>
-      <h1>hello counter</h1>
-      <h2>counter value : {counter}</h2>
-      <button onClick={addValue}>add value</button>
+      <h1>counter </h1>
+      <button onClick={addvalue}>addvalue {counter}</button>
       <br />
       <br />
-      <button onClick={removevalue}>remove value</button>
+      <button onClick={removevalue}>removevalue {counter}</button>
     </>
   );
 }
